@@ -1,0 +1,10 @@
+{
+  "errorCode": 0,
+  "errorMsg":"ok",
+  "data": {
+    "raffleNum": 0,
+    "prize": false,
+    "registered": false
+  }
+}
+

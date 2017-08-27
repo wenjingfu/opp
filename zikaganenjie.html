@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <title>字咖感恩节</title>
+    <meta name="keywords" content="字体管家，Aa，免费字体，商城，H5，字体下载，好看字体，易字云，免费，手机字体，换字体，多字体">
+    <meta name="description" content="">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="loading-container" style="display: none;">
+        <span>正在加载中 …</span>
+    </div>
+    <div class="main-container">
+        <img src="http://upaicdn.xinmei365.com/fontShop-oppo/ganenjie_00.png" border="0" style="width: 100%;" />
+
+        <img src="http://upaicdn.xinmei365.com/fontShop-oppo/ganenjie_01.png" border="0" style="width: 100%;" usemap="#ganenjie_01" />
+        <map name="ganenjie_01" id="ganenjie_01">
+            <area shape="rect" coords="260,660,820,800" id="ganenjie_01-rect-btn" />
+        </map>
+
+        <img src="http://upaicdn.xinmei365.com/fontShop-oppo/ganenjie_02.png" border="0" style="width: 100%;" usemap="#ganenjie_02" />
+        <map name="ganenjie_02" id="ganenjie_02">
+            <area shape="rect" coords="260,660,820,800" id="ganenjie_02-rect-btn" />
+        </map>
+
+        <img src="http://upaicdn.xinmei365.com/fontShop-oppo/ganenjie_03.png" border="0" style="width: 100%;" usemap="#ganenjie_03" />
+        <map name="ganenjie_03" id="ganenjie_03">
+            <area shape="rect" coords="260,660,820,800" id="ganenjie_03-rect-btn" />
+        </map>
+
+        <img src="http://upaicdn.xinmei365.com/fontShop-oppo/ganenjie_04.png" border="0" style="width: 100%;" usemap="#ganenjie_04" />
+        <map name="ganenjie_04" id="ganenjie_04">
+            <area shape="rect" coords="260,660,820,800" id="ganenjie_04-rect-btn" />
+        </map>
+
+        <img src="http://upaicdn.xinmei365.com/fontShop-oppo/ganenjie_05.png" border="0" style="width: 100%;" usemap="#ganenjie_05" />
+        <map name="ganenjie_05" id="ganenjie_05">
+            <area shape="rect" coords="260,660,820,800" id="ganenjie_05-rect-btn" />
+        </map>
+
+        <img src="http://upaicdn.xinmei365.com/fontShop-oppo/ganenjie_06.png" border="0" style="width: 100%;" usemap="#ganenjie_06" />
+        <map name="ganenjie_06" id="ganenjie_06">
+            <area shape="rect" coords="260,660,820,800" id="ganenjie_06-rect-btn" />
+        </map>
+
+
+    </div>
+
+    <script src="http://upaicdn.xinmei365.com/js/jquery-1.11.3.js"></script>
+    <script src="http://upaicdn.xinmei365.com/js/bootstrap.min.js"></script>
+
+    <script src="http://upaicdn.xinmei365.com/js/fastclick.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+
+    <script>
+    $(function() {
+        if (!isLoadingPage()) return false;
+
+        var w = $(window).width();
+        // console.log(w);
+        var realPC = w / 1080;
+        // console.log(realPC);
+        var sX = 260 * realPC;
+        var sY = 660 * realPC;
+        var eX = 820 * realPC;
+        var eY = 800 * realPC;
+        // console.log(sX+","+sY+","+eX+","+eY);
+        $('#ganenjie_01-rect-btn').attr("coords", sX+","+sY+","+eX+","+eY);
+        $('#ganenjie_02-rect-btn').attr("coords", sX+","+sY+","+eX+","+eY);
+        $('#ganenjie_03-rect-btn').attr("coords", sX+","+sY+","+eX+","+eY);
+        $('#ganenjie_04-rect-btn').attr("coords", sX+","+sY+","+eX+","+eY);
+        $('#ganenjie_05-rect-btn').attr("coords", sX+","+sY+","+eX+","+eY);
+        $('#ganenjie_06-rect-btn').attr("coords", sX+","+sY+","+eX+","+eY);
+
+		FastClick.attach($('#ganenjie_01-rect-btn')[0]);
+		FastClick.attach($('#ganenjie_02-rect-btn')[0]);
+		FastClick.attach($('#ganenjie_03-rect-btn')[0]);
+		FastClick.attach($('#ganenjie_04-rect-btn')[0]);
+		FastClick.attach($('#ganenjie_05-rect-btn')[0]);
+		FastClick.attach($('#ganenjie_06-rect-btn')[0]);
+
+        $(document).on('click', '#ganenjie_01-rect-btn', function() {
+            openWallpaperInClient(555667, 'Aa-花瓣体', 'com.monotype.android.font.AAHBT');
+        });
+        $(document).on('click', '#ganenjie_02-rect-btn', function() {
+            openWallpaperInClient(544089, 'Aa-夕禾体简', 'com.monotype.android.font.XHT');
+        });
+        $(document).on('click', '#ganenjie_03-rect-btn', function() {
+            openWallpaperInClient(561137, 'Aa-小鹿体', 'eb2fc1eea6384bdf9377d94e1dbfe778');
+        });
+        $(document).on('click', '#ganenjie_04-rect-btn', function() {
+            openWallpaperInClient(532280, 'Aa-润行体', 'com.monotype.android.font.RXT');
+        });
+        $(document).on('click', '#ganenjie_05-rect-btn', function() {
+            openWallpaperInClient(530925, '字体-天真', 'com.monotype.android.font.TZOPPO');
+        });
+        $(document).on('click', '#ganenjie_06-rect-btn', function() {
+            openWallpaperInClient(543235, 'Aa-青葱体', 'com.monotype.android.font.QC');
+        });
+    });
+    </script>
+
+
+</body>
+
+</html>

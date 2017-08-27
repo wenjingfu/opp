@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>七夕情人节抽奖活动</title>
+    <link href="assets/css/activity.css" rel="stylesheet">
+    <style>
+        @font-face {font-family:SourceHanSansCN-Normal; src: url("http://upaicdn.xinmei365.com/activity/oppo/fonts/SourceHanSansCN-Normal.otf")}
+    </style>
+    <script>
+        resize();
+        window.onresize = function () {
+            resize();
+        };
+        function resize() {
+            if(document.documentElement.clientWidth>=1080){
+                document.documentElement.style.fontSize="100px";
+            }else {
+                document.documentElement.style.fontSize=document.documentElement.clientWidth/10.8+"px";
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="content">
+    <img class="lazy img1" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/01.jpg">
+    <img class="lazy img2" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/02_prize.jpg">
+    <div class="raffleDiv">
+        <a href="javascript:activity.raffle()" onfocus="this.blur();">
+            <img src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/03_raffle_btn.png" class="raffleBtn">
+        </a>
+    </div>
+    <div class="scroll-box">
+        <div class="marquee-div">
+
+        </div>
+    </div>
+    <div class="tip-text">
+        <div class="tip-text-top">你有<span id="raffleNum">0</span>次抽奖机会</div>
+        <div class="tip-text-middle">(每购买1次增加1次抽奖机会)</div>
+        <div class="tip-text-bottom"> <a href="javascript:activity.showActivityRules()"  onfocus="this.blur();">活动细则</a></div>
+    </div>
+    <div class="hr"></div>
+    <a href="javascript:activity.getPrize()" onfocus="this.blur();" class="prize clear-fix"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/myPrize.png" ></a>
+    <div class="font-img">
+        <a href="javascript:activity.openPage(0)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.1_font_download_qianqianjunzi.jpg"></a>
+        <a href="javascript:activity.openPage(1)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.2_font_download_yaotiaoshunv.jpg"></a>
+        <a href="javascript:activity.openPage(2)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.3_font_download_pangxiaoer.jpg"></a>
+        <a href="javascript:activity.openPage(3)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.4_font_download_pangyaer.jpg"></a>
+        <a href="javascript:activity.openPage(4)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.5_font_download_sanhangqingshujiacu.jpg"></a>
+        <a href="javascript:activity.openPage(5)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.6_font_download_xiaohulijiacu.jpg"></a>
+        <a href="javascript:activity.openPage(6)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.7_font_download_taozixiaojie.jpg"></a>
+        <a href="javascript:activity.openPage(7)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.8_font_download_xiguaxiansheng.jpg"></a>
+        <a href="javascript:activity.openPage(8)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.9_font_download_mangxiaoguo.jpg"></a>
+        <a href="javascript:activity.openPage(9)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.10_font_download_xiaoxingxing.jpg"></a>
+        <a href="javascript:activity.openPage(10)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.11_font_download_xiangpihuanghou.jpg"></a>
+        <a href="javascript:activity.openPage(11)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.12_font_download_chanmeng.jpg"></a>
+        <a href="javascript:activity.openPage(12)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.13_font_download_huaban.jpg"></a>
+        <a href="javascript:activity.openPage(13)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.14_font_download_xiaolu.jpg"></a>
+        <a href="javascript:activity.openPage(14)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.15_font_download_sangni.jpg"></a>
+        <a href="javascript:activity.openPage(15)" onfocus="this.blur();"><img class="lazy" src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/font/09.16_font_download_qingtian.jpg"></a>
+    </div>
+    <img  src="http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/10_footer.jpg" class="lazy clear-fix footerimg">
+</div>
+
+<div class="layer hide">
+    <div class='activityRulesContent'>
+        <div class="rule-text">
+            <div>1. 活动时间: 8月28日-9月4日</div>
+            <div>
+                <div class="left">2. 活动奖品:&nbsp;</div>
+                <div class="right">
+                    <p> 200元的京东购物卡（10张) </p>
+                    <p> 200元的格瓦拉电影卡（10张) </p>
+                    <p> 200元的星巴克星礼卡（10张) </p>
+                    <p> 200元的哈根达斯储值卡（10张) </p>
+                    <p> 200元的八喜月饼提货卡（10张) </p>
+                </div>
+            </div>
+            <div class="clear-fix">3. 抽奖规则: 购买“七夕情人节”活动页面内任一字体，获得一次抽奖机会;每购买一款字体增加一次抽奖机会
+            </div>
+            <div>4. 中奖用户点击右下角“我的奖品”按钮填写有效收货信息并提交，若在活动结束仍未提交，视为用户主动弃奖
+            </div>
+            <div>
+                5. 活动结束后，奖品统一发出。如果您有任何问题，请联系主办方Aa字库官方工作人员，QQ：2313914297
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="assets/js/jquery-1.11.3.js"></script>
+<script src="assets/layer/layer.js"></script>
+<script src="assets/js/jquery.lazyload.min.js"></script>
+<script src="assets/js/activity.js"></script>
+</html>

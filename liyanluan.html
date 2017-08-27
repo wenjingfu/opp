@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>李颜鸾作品集</title>
+    <style type="text/css">
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding:0;
+            font-size: 0;
+        }
+        .content{
+            width: 100%;
+        }
+        img{
+            width: 100%;
+        }
+        a{
+            border:0px;
+        }
+        a:focus{
+            border:0px;
+        }
+        a:active{
+            border:0px;
+        }
+        .loadDiv {
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: flex-start;
+        }
+        .loadDiv a {
+            flex: 0 0 50%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="content">
+    <div id="map"></div>
+    <img src="assets/img/01_banner_1080.jpg">
+    <a href="javascript:openPage(11)" onfocus="this.blur();"><img src="assets/img/02_Aastarload_1080.jpg"></a>
+    <img src="assets/img/03_duoduo_1080.jpg">
+    <img src="assets/img/04_hand_1080.jpg">
+    <img src="./assets/img/05_10款字体下载文案_1080.jpg">
+    <div class="loadDiv">
+        <a href="javascript:openPage(9)" onfocus="this.blur();"><img src="./assets/img/05_10款字体下载01_1080.jpg"></a>
+        <a href="javascript:openPage(7)" onfocus="this.blur();"><img src="./assets/img/05_10款字体下载02_1080.jpg"></a>
+        <a href="javascript:openPage(2)" onfocus="this.blur();"><img src="./assets/img/05_10款字体下载03_1080.jpg"></a>
+        <a href="javascript:openPage(4)" onfocus="this.blur();"><img src="./assets/img/05_10款字体下载04_1080.jpg"></a>
+        <a href="javascript:openPage(6)" onfocus="this.blur();"><img src="./assets/img/05_10款字体下载05_1080.jpg"></a>
+        <a href="javascript:openPage(3)" onfocus="this.blur();"><img src="./assets/img/05_10款字体下载06_1080.jpg"></a>
+        <a href="javascript:openPage(5)" onfocus="this.blur();"><img src="./assets/img/05_10款字体下载07_1080.jpg"></a>
+        <a href="javascript:openPage(8)" onfocus="this.blur();"><img src="./assets/img/05_10款字体下载08_1080.jpg"></a>
+        <a href="javascript:openPage(10)" onfocus="this.blur();"><img src="./assets/img/05_10款字体下载09_1080.jpg"></a>
+        <a href="javascript:openPage(1)" onfocus="this.blur();"><img src="./assets/img/05_10款字体下载10_1080.jpg"></a>
+    </div>
+    <img src="assets/img/06_结语_1080.jpg">
+</div>
+<script type="text/javascript">
+
+    function openWallpaperInClient(fontArray){
+        if ( typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.openProduct != "undefined"
+                && window.ThemeClient.openProduct instanceof Function){
+            window.ThemeClient.openProduct(fontArray[0],fontArray[1],fontArray[2],fontArray[3]);
+            return;
+        }
+        else if ( typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.updateVersion != "undefined"
+                && window.ThemeClient.updateVersion instanceof Function){
+            window.ThemeClient.updateVersion();
+            return;
+        }
+        else{
+            alert("当前客户端不支持该功能，请升级客户端");
+        }
+    }
+
+    function openPage(type){
+        var fontArray= [];
+        switch (type) {
+            case 1:
+                fontArray = [4,544271,'Aa-方萌体','com.monotype.android.font.FMT'];
+                break;
+            case 2:
+                fontArray = [4,530550,'字体印象','com.monotype.android.font.YXOPPO02'];
+                break;
+            case 3:
+                fontArray = [4,548996,'Aa-手账体','com.monotype.android.font.AASZT'];
+                break;
+            case 4:
+                fontArray = [4,550385,'Aa-甜甜圈体','com.monotype.android.font.AaTTQUAN'];
+                break;
+            case 5:
+                fontArray = [4,551983,'Aa-纸胶带体','com.monotype.android.font.AAZJD'];
+                break;
+            case 6:
+                fontArray = [4,555667,'Aa-花瓣体','com.monotype.android.font.AAHBT'];
+                break;
+            case 7:
+                fontArray = [4,561137,'Aa-小鹿体','eb2fc1eea6384bdf9377d94e1dbfe778'];
+                break;
+            case 8:
+                fontArray = [4,530925,'字体-天真','com.monotype.android.font.TZOPPO'];
+                break;
+            case 9:
+                fontArray = [4,582333,'Aa秀秀体','b0153609fa9149668bb0df223bc520bb'];
+                break;
+            case 10:
+                fontArray = [4,582306,'Aa桑尼','2c9d37fe973f486cb6afc545ff5fd4d5'];
+                break;
+            case 11:
+                fontArray = [ 4,586229,'Aa小星星','b0e2d720697f40539e487d61950c6334' ];
+                break;
+        }
+        openWallpaperInClient(fontArray);
+    }
+</script>
+</body>
+</html>

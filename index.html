@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="import" href="/inc/meta.html?__inline">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="loading-container" style="display: none;">
+        <span>正在加载中 …</span>
+    </div>
+    <div class="main-container">
+        <img src="http://upaicdn.xinmei365.com/fontShop-oppo/shouZhangTi-banner.jpg" border="0" usemap="#shouZhngTi" style="width: 100%;" />
+
+        <map name="shouZhngTi" id="shouZhngTi">
+            <area shape="rect" coords="205,418,515,528" id="shouZhngTi-rect-btn" />
+        </map>
+    </div>
+
+
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+
+    <script>
+    $(function() {
+        if (!isLoadingPage()) return false;
+
+        var w = $(window).width();
+        var realPC = w / 720;
+        // console.log(realPC);
+        var sX = 203 * realPC;
+        var sY = 418 * realPC;
+        var eX = 515 * realPC;
+        var eY = 528 * realPC;
+        // console.log(sX+","+sY+","+eX+","+eY);
+        $('#shouZhngTi-rect-btn').attr("coords", sX+","+sY+","+eX+","+eY);
+
+        $(document).on('click', '#shouZhngTi-rect-btn', function() {
+            openWallpaperInClient(548996, 'Aa-手账体', 'com.monotype.android.font.AASZT');
+        });
+    });
+    </script>
+
+
+</body>
+
+</html>

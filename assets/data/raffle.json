@@ -1,0 +1,9 @@
+{
+  "errorCode":0,
+  "errorMsg":"ok",
+  "data":{
+    "win":false,
+    "winType": 1,
+    "lotteryName":"xxx"
+  }
+}

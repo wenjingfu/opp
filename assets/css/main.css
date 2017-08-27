@@ -1,0 +1,33 @@
+body {
+    font-family: 'Lantinghei SC', 'Open Sans', 'Arial', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'STHeiti', 'WenQuanYi Micro Hei', 'SimSun', sans-serif;
+    color: #000000;
+    background-color: #F0F1F4;
+}
+
+a,a:hover,a:focus,a:active,a:visited {
+    text-decoration: none;
+}
+.main-container {
+    position: relative;
+}
+.container {
+    width: 100%;
+}
+
+/** loading container **/
+.loading-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -20px 0 0 -150px;
+    width: 300px;
+    height: 40px;
+}
+
+.loading-container span {
+    display: block;
+    text-align: center;
+    color: #000000;
+    opacity: 0.87;
+    font-size: 1.75em;
+}

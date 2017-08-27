@@ -1,0 +1,347 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: SourceHanSansCN-Normal;
+}
+
+p, div,ul,li {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    width: 100%;
+    margin: auto;
+    font-size: 0;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    border: 0px;
+}
+
+a:focus {
+    border: 0px;
+}
+
+a:active {
+    border: 0px;
+}
+
+.em {
+    font-weight: bold;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+.hide {
+    display: none;
+}
+
+/********中奖者滚动条****************/
+.scroll-box {
+    height: .71rem;
+    margin: auto;
+    text-align: center;
+    background: url("http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/04_prize_list_bg.jpg") no-repeat;
+    background-size: auto .71rem;
+}
+.scroll-box div {
+    margin: 0 .5rem;
+    height: .71rem;
+    font-size: .3rem;
+    line-height: .71rem;
+}
+.marquee {
+    height: .71rem;
+    overflow: hidden;
+}
+
+
+/*********抽奖***********/
+.raffleDiv {
+    height: 2.22rem;
+    background: url("http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/03_raffle_bg.jpg") no-repeat;
+    background-size: auto 2.22rem;
+    text-align: center;
+}
+
+.raffleBtn {
+    width: 4.85rem;
+    margin: auto;
+}
+
+.tip-text {
+    width: 100%;
+    text-align: center;
+}
+
+.tip-text-top {
+    background: url("http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/05_bg.jpg") no-repeat;
+    background-size: 100% auto;
+    font-size: .36rem;
+}
+
+.tip-text-middle {
+    height: .44rem;
+    background: url("http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/06_bg.jpg") no-repeat;
+    background-size: auto .44rem;
+    font-size: .30rem;
+
+}
+
+.tip-text-bottom {
+    height: 1.5rem;
+    background: url("http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/07_bg.jpg") no-repeat;
+    background-size: auto 1.5rem;
+    font-size: .32rem;
+    line-height: 1.5rem;
+}
+
+.hr {
+    height: .29rem;
+    background: url("http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/08_hr.jpg") no-repeat;
+    background-size: auto .29rem;
+
+}
+
+/********福袋样式************/
+.prize {
+    bottom: 0;
+    right: .3rem;
+    position: fixed;
+}
+
+.prize img {
+    width: 1.69rem;
+    height: auto;
+}
+
+/********字体下载样式*******************/
+.font-img img {
+    width: 5.4rem;
+    height: 4.3rem;
+    float: left;
+}
+
+/**************layer 弹出框样式***************/
+.layui-layer {
+    background-color: rgba(0, 0, 0, 0) !important;
+    box-shadow: none !important;
+}
+
+.layui-layer-title {
+    display: none;
+}
+
+.layui-layer-content {
+    padding: 0 !important;
+}
+
+.layui-layer-dialog {
+    min-width: 100px !important;
+}
+
+.layui-layer-btn {
+    /*margin: 0 .3rem !important;*/
+    padding: 0 !important;
+    position: absolute !important;
+    bottom: 2.5rem !important;
+    left: 4rem !important;
+    height: .6rem !important;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.layui-layer-btn a {
+    margin: 0 .12rem 0 0 !important;
+    height: .6rem !important;
+    width: 2rem !important;
+    border: 1px solid #fff !important;
+    background-color: #fff !important;
+    color: #000 !important;
+    font-size: .32rem !important;
+    text-align: center !important;
+    line-height: .6rem !important;
+}
+
+.layerContent {
+    width: 100%;
+    height: 100%;
+    background: url("http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/raffle_layer1.png") no-repeat top;
+    background-size: 100% auto;
+}
+
+.pure-context {
+    text-align: center;
+    padding-top: 5.5rem;
+    color: #fff;
+    margin: 0 auto;
+    font-size: .4rem;
+    line-height: 1rem;
+}
+/*****抽奖中奖弹出框****/
+.win-context {
+    text-align: center;
+    padding-top: 4.5rem;
+    color: #fff;
+    margin: 0 auto;
+    font-size: .36rem;
+    line-height: 1rem;
+}
+.win-context-top {
+    font-size: .5rem;
+    line-height: 1rem;
+    text-align: center;
+}
+
+.win-context-bottom {
+    width:4.8rem;
+    text-align: center;
+    font-size: .30rem;
+    line-height: .6rem;
+    margin: auto;
+}
+
+.prizePoto {
+    width: 2.1rem;
+    height: auto;
+}
+
+/*****用户中奖后注册弹框样式*********/
+.registerContent {
+    width: 100%;
+    height: 100%;
+    background: url("http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/layer_bg.png") no-repeat top;
+    background-size: 100% auto;
+}
+
+.register-context {
+    color: #fff;
+    padding: .6rem .5rem;
+}
+
+.layer-form .title {
+    font-size: .5rem;
+    line-height: 1rem;
+    width: 8.58rem;
+}
+
+.layer-form .text {
+    width: 100%;
+    height: .5rem;
+    text-align: center;
+    padding: .2rem 0;
+}
+
+.layer-form .text label {
+    width: 2.8rem;
+    float: left;
+    font-size: .4rem;
+    line-height: .5rem;
+    text-align: left;
+}
+
+.layer-form .text input {
+    width: 5rem;
+    height: .4rem;
+    float: left;
+    border-radius: 4px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    box-shadow: none;
+
+}
+
+.register-tip {
+    font-size: .3rem;
+    line-height: .4rem;
+    position: absolute;
+    bottom: 1.25rem;
+
+}
+.register-error-tip {
+    font-size: .3rem;
+    line-height: .4rem;
+    position: absolute;
+    bottom: 1.8rem;
+    color: #000;
+}
+
+/*****活动规则弹出框样式*****/
+.activityRulesContent {
+    width: 100%;
+    height: 100%;
+    background: url("http://upaicdn.xinmei365.com/activity/oppo/img/qixiActivity/rules_pop_up_box_bg.png") no-repeat top;
+    background-size: 100% auto;
+}
+
+.rule-text {
+    font-size: .3rem;
+    line-height: .5rem;
+    color: #000;
+    padding: .6rem .4rem;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: left;
+}
+
+/*******我的奖品弹框********/
+.prize-context {
+    text-align: center;
+    padding-top: 4rem;
+    color: #fff;
+    margin: 0 auto;
+    font-size: .4rem;
+    line-height: 1rem;
+}
+
+.top {
+    font-size: .5rem;
+    line-height: 1rem;
+}
+
+.bottom {
+    width: 5rem;
+    text-align: left;
+    font-size: .30rem;
+    line-height: .6rem;
+    margin: auto;
+}
+
+.footerimg {
+    height: 1.1rem;
+}
+.img1 {
+    height:4.57rem ;
+}
+.img2 {
+    height:9.05rem ;
+}
+.alertMsgLayer {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    text-align: center;
+
+}
+.alertMsgLayer .text {
+    color: #000;
+    font-size: .4rem;
+    line-height: .5rem;
+    padding-top: 1.5rem;
+}
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <title>圣诞快乐</title>
+    <meta name="keywords" content="字体管家，Aa，免费字体，商城，H5，字体下载，好看字体，易字云，免费，手机字体，换字体，多字体">
+    <meta name="description" content="">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="loading-container" style="display: none;">
+        <span>正在加载中 …</span>
+    </div>
+    <div class="main-container">
+        <img src="http://upaicdn.xinmei365.com/fontShop-oppo/christmas.jpg" border="0" usemap="#christmas" style="width: 100%;" />
+        <map name="christmas" id="christmas">
+            <area shape="rect" coords="260,1540,820,1670" id="christmas-rect-btn" />
+        </map>
+    </div>
+
+
+    <script src="http://upaicdn.xinmei365.com/js/jquery-1.11.3.js"></script>
+    <script src="http://upaicdn.xinmei365.com/js/bootstrap.min.js"></script>
+
+    <script src="http://upaicdn.xinmei365.com/js/fastclick.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+
+
+    <script>
+    $(function() {
+        if (!isLoadingPage()) return false;
+
+        var w = $(window).width();
+        var realPC = w / 1080;
+        var sX = 260 * realPC;
+        var sY = 1540 * realPC;
+        var eX = 820 * realPC;
+        var eY = 1670 * realPC;
+        $('#christmas-rect-btn').attr("coords", sX+","+sY+","+eX+","+eY);
+
+        $(window).resize(function() {
+            var w = $(window).width();
+            var realPC = w / 1080;
+            var sX = 260 * realPC;
+            var sY = 1540 * realPC;
+            var eX = 820 * realPC;
+            var eY = 1670 * realPC;
+            $('#christmas-rect-btn').attr("coords", sX+","+sY+","+eX+","+eY);
+        });
+
+        FastClick.attach($('#christmas-rect-btn')[0]);
+
+        $(document).on('click', '#christmas-rect-btn', function() {
+            openWallpaperInClient(561137, 'Aa-小鹿体', 'eb2fc1eea6384bdf9377d94e1dbfe778');
+        });
+    });
+    </script>
+
+
+</body>
+
+</html>

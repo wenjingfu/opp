@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="import" href="/inc/meta.html?__inline">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="loading-container" style="display: none;">
+        <span>正在加载中 …</span>
+    </div>
+    <div class="main-container">
+        <img src="http://upaicdn.xinmei365.com/fontShop-oppo/tianTianQuan-banner.jpg" border="0" usemap="#tianTianQuan" style="width: 100%;" />
+
+        <map name="tianTianQuan" id="tianTianQuan">
+            <area shape="rect" coords="112,1035,609,1159" id="tianTianQuan-rect-btn" />
+        </map>
+    </div>
+
+
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+
+    <script>
+    $(function() {
+        if (!isLoadingPage()) return false;
+
+        var w = $(window).width();
+        var realPC = w / 720;
+        var sX = 112 * realPC;
+        var sY = 1035 * realPC;
+        var eX = 609 * realPC;
+        var eY = 1159 * realPC;
+        $('#tianTianQuan-rect-btn').attr("coords", sX+","+sY+","+eX+","+eY);
+
+        $(window).resize(function() {
+            var w = $(window).width();
+            var realPC = w / 720;
+            var sX = 112 * realPC;
+            var sY = 1035 * realPC;
+            var eX = 609 * realPC;
+            var eY = 1159 * realPC;
+            $('#tianTianQuan-rect-btn').attr("coords", sX+","+sY+","+eX+","+eY);
+        });
+
+        $(document).on('click touchstart', '#tianTianQuan-rect-btn', function() {
+            openWallpaperInClient(550385, 'Aa-甜甜圈体', 'com.monotype.android.font.AaTTQUAN');
+        });
+    });
+    </script>
+
+
+</body>
+
+</html>

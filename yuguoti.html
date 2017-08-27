@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+	<title>Aa老外雨果体</title>
+	<style type="text/css">
+		html,body{
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding:0;
+		}
+		.content{
+			width: 100%;
+		}
+		img{
+			width: 100%;
+		}
+		a{
+			border:0px;
+		}
+		a:focus{
+			border:0px;
+		}
+		a:active{
+			border:0px;
+		}
+	</style>
+</head>
+<body>
+<div class="content">
+	<div id="map"></div>
+	<img src="./assets/img/1.jpg">
+	<a href="javascript:openPage()" onfocus="this.blur();"><img src="./assets/img/2.jpg"></a>
+	<img src="./assets/img/3.jpg">
+	<img src="./assets/img/4.jpg">
+	<img src="./assets/img/5.jpg">
+	<img src="./assets/img/6.jpg">
+</div>
+<script type="text/javascript">
+
+	function openWallpaperInClient(){
+	    if ( typeof window.ThemeClient != "undefined"
+		    && typeof window.ThemeClient.openProduct != "undefined"
+		    && window.ThemeClient.openProduct instanceof Function){
+		        window.ThemeClient.openProduct(4,584898,'Aa老外雨果体','3cdc8ab3c2a149f08dfc23e18c133620')
+		        return;
+		}
+		else if ( typeof window.ThemeClient != "undefined"
+		    && typeof window.ThemeClient.updateVersion != "undefined"
+		    && window.ThemeClient.updateVersion instanceof Function){
+		        window.ThemeClient.updateVersion();
+		        return;
+		}
+		else{
+		    alert("当前客户端不支持该功能，请升级客户端");
+		}
+	}
+
+
+	// var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	// var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+	// var mapWidth = 426 * width/1000;
+	// var img2Height = 365 * width/1000;
+	// var mapHeight = 913 * img2Height / 1000;
+	// var mapLeft = (width - mapWidth) / 2;
+	// var mapTop = (img2Height - mapHeight ) / 2;
+
+	// var con = [];
+	// var mapHtml = '<map name="planetmap" id="planetmap"><area shape="rect" coords="'+mapLeft+','+mapTop+','+(mapLeft+mapWidth)+','+(mapTop+mapHeight)+'" href="javascript:openPage()" alt="Sun"></map>';
+	// document.getElementById('map').innerHTML = mapHtml;
+
+	function openPage(){
+		openWallpaperInClient();
+	}
+</script>
+</body>
+</html>
