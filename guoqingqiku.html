@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>国庆吃货手札</title>
+    <style type="text/css">
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding:0;
+        }
+        .content{
+            width: 100%;
+            font-size: 0;
+        }
+        img{
+            width: 100%;
+        }
+        a{
+            border:0px;
+        }
+        a:focus{
+            border:0px;
+        }
+        a:active{
+            border:0px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <img src="http://upaicdn.xinmei365.com/activity/qiku/img/guoqing/guoqing_01.jpg">
+    <img src="http://upaicdn.xinmei365.com/activity/qiku/img/guoqing/guoqing_02.jpg">
+    <a href="javascript:openPage(0)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/qiku/img/guoqing/guoqing_03.jpg"></a>
+    <a href="javascript:openPage(1)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/qiku/img/guoqing/guoqing_04.jpg"></a>
+    <a href="javascript:openPage(2)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/qiku/img/guoqing/guoqing_05.jpg"></a>
+    <a href="javascript:openPage(3)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/qiku/img/guoqing/guoqing_06.jpg"></a>
+    <a href="javascript:openPage(4)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/qiku/img/guoqing/guoqing_07.jpg"></a>
+    <a href="javascript:openPage(5)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/qiku/img/guoqing/guoqing_08.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/qiku/img/guoqing/guoqing_09.jpg">
+</div>
+<script type="text/javascript">
+    function onDownload(theme) {
+        try {
+            H5Support.Go2CoolShow(theme.type, theme.rid, '');
+        } catch (err) {
+            H5Support.Go2QikuShow(theme.type, theme.rid, '');
+        }
+
+    }
+
+    function openPage(type) {
+        var type = type;
+        var themeArray = [
+            {type: 5, rid: 1169},
+            {type: 5, rid: 354902617},
+            {type: 5, rid: 1168},
+            {type: 5, rid: 1116},
+            {type: 5, rid: 1111},
+            {type: 5, rid: 841868625}
+        ];
+        onDownload(themeArray[type]);
+    }
+</script>
+</body>
+</html>

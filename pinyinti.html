@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>拼音体H5</title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 100%;
+            font-size: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            border: 0px;
+        }
+
+        a:focus {
+            border: 0px;
+        }
+
+        a:active {
+            border: 0px;
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110071893-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110071893-2');
+    </script>
+
+</head>
+<body>
+<div class="content">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/pinyinti/01.jpg">
+    <a href="javascript:openPage(0)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/pinyinti/02.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/pinyinti/03.jpg">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/pinyinti/04.gif">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/pinyinti/05.jpg">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/pinyinti/06.jpg">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/pinyinti/07.jpg">
+    <a href="javascript:openPage(1)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/pinyinti/08.jpg"></a>
+</div>
+<script type="text/javascript">
+    function openWallpaperInClient(fontArray) {
+        if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.openProduct != "undefined"
+                && window.ThemeClient.openProduct instanceof Function) {
+            window.ThemeClient.openProduct(fontArray[0], fontArray[1], fontArray[2], fontArray[3]);
+            return;
+        }
+        else if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.updateVersion != "undefined"
+                && window.ThemeClient.updateVersion instanceof Function) {
+            window.ThemeClient.updateVersion();
+            return;
+        }
+        else {
+            alert("当前客户端不支持该功能，请升级客户端");
+        }
+    }
+
+    function openPage(type) {
+        if (type === 0) {
+            gtag('event', 'click', {'event_category':'Aa囡囡拼音体'});
+        } else {
+            gtag('event', 'click', {'event_category':'Aa旧时光拼音体'});
+        }
+        var fontArray = [
+            [4,600738,'Aa囡囡拼音体','ecff161d8c90446fa83cfc0dc959bc0f'],
+            [4,600733,'Aa旧时光拼音体','d2d796fd84e343db9668479bfd0c7d7e']
+        ];
+        openWallpaperInClient(fontArray[type]);
+    }
+</script>
+</body>
+</html>

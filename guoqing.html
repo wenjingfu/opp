@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>国庆吃货手札</title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 100%;
+            font-size: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            border: 0px;
+        }
+
+        a:focus {
+            border: 0px;
+        }
+
+        a:active {
+            border: 0px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/guoqing/guoqing_01.jpg">
+    <a href="javascript:openPage(0)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/guoqing/guoqing_02.jpg"></a>
+    <a href="javascript:openPage(1)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/guoqing/guoqing_03.jpg"></a>
+    <a href="javascript:openPage(2)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/guoqing/guoqing_04.jpg"></a>
+    <a href="javascript:openPage(3)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/guoqing/guoqing_05.jpg"></a>
+    <a href="javascript:openPage(4)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/guoqing/guoqing_06.jpg"></a>
+    <a href="javascript:openPage(5)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/guoqing/guoqing_07.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/guoqing/guoqing_08.jpg">
+</div>
+<script type="text/javascript">
+    function openWallpaperInClient(fontArray) {
+        console.log(fontArray);
+        if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.openProduct != "undefined"
+                && window.ThemeClient.openProduct instanceof Function) {
+            window.ThemeClient.openProduct(fontArray[0], fontArray[1], fontArray[2], fontArray[3]);
+            return;
+        }
+        else if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.updateVersion != "undefined"
+                && window.ThemeClient.updateVersion instanceof Function) {
+            window.ThemeClient.updateVersion();
+            return;
+        }
+        else {
+            alert("当前客户端不支持该功能，请升级客户端");
+        }
+    }
+
+    function openPage(type) {
+        var fontArray = [
+            [4, 591722, 'Aa心有猛虎体', '5ca720f419234ae983eb6ac00cbf9a82'],
+            [4, 586254, 'Aa芒小果', '9ff5c74d2d42451698b6f918cc1a8a76'],
+            [4, 591721, 'Aa苏打汽水', '43caace0ab13485c962254724151e83f'],
+            [4, 586285, 'Aa星玥体', '0e7c71f419e24a58a6bceb2bede8ad7c'],
+            [4, 586256, 'Aa三行情书体加粗', '2213c3af40c8429ab26b754e4780b047'],
+            [4, 544089, 'Aa-夕禾体简', 'com.monotype.android.font.XHT']
+        ];
+        openWallpaperInClient(fontArray[type]);
+    }
+</script>
+</body>
+</html>

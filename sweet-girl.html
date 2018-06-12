@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>Aa甜心少女&Aa晴空少年</title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            width: 100%;
+            font-size: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            border: 0px;
+        }
+
+        a:focus {
+            border: 0px;
+        }
+
+        a:active {
+            border: 0px;
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110071893-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110071893-6');
+    </script>
+
+</head>
+<body>
+<div class="content">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/sweet-girl/1.jpg">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/sweet-girl/2.jpg">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/sweet-girl/3.jpg">
+    <a href="javascript:openPage(0)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/sweet-girl/4.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/sweet-girl/5.jpg">
+    <a href="javascript:openPage(1)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/sweet-girl/6.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/sweet-girl/7.jpg">
+    <!--<img src="http://upaicdn.xinmei365.com/activity/oppo/img/sweet-girl/img/sweet-girl/08.jpg">-->
+</div>
+<script type="text/javascript">
+    function openWallpaperInClient(fontArray) {
+        // console.log(fontArray);
+        if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.openProduct != "undefined"
+                && window.ThemeClient.openProduct instanceof Function) {
+            window.ThemeClient.openProduct(fontArray[0], fontArray[1], fontArray[2], fontArray[3]);
+            return;
+        }
+        else if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.updateVersion != "undefined"
+                && window.ThemeClient.updateVersion instanceof Function) {
+            window.ThemeClient.updateVersion();
+            return;
+        }
+        else {
+            alert("当前客户端不支持该功能，请升级客户端");
+        }
+    }
+
+    function openPage(index) {
+        var fontArray = [
+            [4,2000905,'Aa甜心少女','98f2c554ee5941d5aa1400f75eb20e64'],
+            [4,2000904,'Aa晴空少年','7c608916587f42c298e36b332799e1a1']
+        ];
+        gtag('event', 'click', {'event_category': fontArray[index][2]});
+        openWallpaperInClient(fontArray[index]);
+    }
+</script>
+</body>
+</html>

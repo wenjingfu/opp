@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>教师节活动</title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 100%;
+            font-size: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            border: 0px;
+        }
+
+        a:focus {
+            border: 0px;
+        }
+
+        a:active {
+            border: 0px;
+        }
+
+        .loadDiv {
+            width: 100%;
+            clear: both;
+        }
+
+        .loadDiv > img {
+            float: left;
+            width: 58.33%;
+        }
+
+        .loadDiv > a {
+            float: left;
+            width: 41.64%;
+
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <img src="./assets/img/jiaoshijie/01.jpg">
+    <img src="./assets/img/jiaoshijie/02.jpg">
+
+    <div class="loadDiv">
+        <a href="javascript:openPage(0)" onfocus="this.blur();"><img src="./assets/img/jiaoshijie/03-1.jpg"></a>
+        <img src="./assets/img/jiaoshijie/03-2.jpg">
+    </div>
+    <div class="loadDiv">
+        <img src="./assets/img/jiaoshijie/04-1.jpg">
+        <a href="javascript:openPage(1)" onfocus="this.blur();"><img src="./assets/img/jiaoshijie/04-2.jpg"></a>
+    </div>
+    <div class="loadDiv">
+        <a href="javascript:openPage(2)" onfocus="this.blur();"><img src="./assets/img/jiaoshijie/05-1.jpg"></a>
+        <img src="./assets/img/jiaoshijie/05-2.jpg">
+    </div>
+    <div class="loadDiv">
+        <img src="./assets/img/jiaoshijie/06-1.jpg">
+        <a href="javascript:openPage(3)" onfocus="this.blur();"><img src="./assets/img/jiaoshijie/06-2.jpg"></a>
+    </div>
+    <div class="loadDiv">
+        <a href="javascript:openPage(4)" onfocus="this.blur();"><img src="./assets/img/jiaoshijie/07-1.jpg"></a>
+        <img src="./assets/img/jiaoshijie/07-2.jpg">
+    </div>
+    <div class="loadDiv">
+        <img src="./assets/img/jiaoshijie/08-1.jpg">
+        <a href="javascript:openPage(5)" onfocus="this.blur();"><img src="./assets/img/jiaoshijie/08-2.jpg"></a>
+    </div>
+    <img src="./assets/img/jiaoshijie/09.jpg">
+    <img src="./assets/img/jiaoshijie/10.jpg">
+</div>
+<script type="text/javascript">
+    function onDownload(theme) {
+        try {
+            H5Support.Go2CoolShow(theme.type, theme.rid, '');
+        } catch (err) {
+            H5Support.Go2QikuShow(theme.type, theme.rid, '');
+        }
+
+    }
+
+    function openPage(type) {
+        var type = type;
+        var themeArray = [
+            {type: 5, rid: 1153},
+            {type: 5, rid: 3073107104},
+            {type: 5, rid: 1155},
+            {type: 5, rid: 1294180562},
+            {type: 5, rid: 1151},
+            {type: 5, rid: 1154}
+        ];
+        onDownload(themeArray[type]);
+    }
+</script>
+</body>
+</html>

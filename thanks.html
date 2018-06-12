@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>随笔－致所有的遇见</title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 100%;
+            font-size: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            border: 0px;
+        }
+
+        a:focus {
+            border: 0px;
+        }
+
+        a:active {
+            border: 0px;
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110071893-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110071893-1');
+    </script>
+
+</head>
+<body>
+<div class="content">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/thanks/01.jpg">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/thanks/02.jpg">
+    <a href="javascript:openPage(0)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/thanks/03.jpg"></a>
+    <a href="javascript:openPage(1)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/thanks/04.jpg"></a>
+    <a href="javascript:openPage(2)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/thanks/05.jpg"></a>
+    <a href="javascript:openPage(3)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/thanks/06.jpg"></a>
+    <a href="javascript:openPage(4)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/thanks/07-1.jpg"></a>
+    <a href="javascript:openPage(5)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/thanks/08.jpg"></a>
+    <a href="javascript:openPage(6)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/thanks/09.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/thanks/10.jpg">
+</div>
+<script type="text/javascript">
+    function openWallpaperInClient(fontArray) {
+        console.log(fontArray);
+        if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.openProduct != "undefined"
+                && window.ThemeClient.openProduct instanceof Function) {
+            window.ThemeClient.openProduct(fontArray[0], fontArray[1], fontArray[2], fontArray[3]);
+            return;
+        }
+        else if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.updateVersion != "undefined"
+                && window.ThemeClient.updateVersion instanceof Function) {
+            window.ThemeClient.updateVersion();
+            return;
+        }
+        else {
+            alert("当前客户端不支持该功能，请升级客户端");
+        }
+    }
+
+    function openPage(type) {
+        var fontArray = [
+            [4,594176,'Aa以梦为马','959fcf61f94a45f6b16012e0d6f9e00a'],
+            [4,588761,'Aa相思','3529789c138e403a9d85f60f3c06ac0b'],
+            [4,592891,'Aa仙风道骨体','1b0b3971bfe0444f8f77081c9bf5092b'],
+            [4,589133,'Aa云游四海','9a13ea02c47648b08d826beff6d4baa1'],
+            [4,586285,'Aa星玥体','0e7c71f419e24a58a6bceb2bede8ad7c'],
+            [4,596576,'Aa时光少女','86e00a7781bb414fbcf0db1e37b58b0f'],
+            [4,544089,'Aa-夕禾体简','com.monotype.android.font.XHT'],
+        ];
+        openWallpaperInClient(fontArray[type]);
+    }
+</script>
+</body>
+</html>

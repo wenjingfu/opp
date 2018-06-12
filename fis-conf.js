@@ -2,7 +2,7 @@
 
 // Global start
 fis.match('*.{js,css}', {
-    useHash: true
+    useHash: false
 });
 
 fis.match('::image', {
@@ -23,7 +23,9 @@ fis.match('*.png', {
 fis.match('layer.css', {
     useHash: false
 });
-
+fis.match("{/Aaxiangsi}", {
+    release: false
+});
 // Global end
 fis.media('dev')
     .match('*', {

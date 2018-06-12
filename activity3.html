@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>七夕情人节抽奖活动</title>
+    <link href="assets/css/activity.css" rel="stylesheet">
+    <style>
+        @font-face {font-family:SourceHanSansCN-Normal; src: url("http://upaicdn.xinmei365.com/activity/oppo/fonts/SourceHanSansCN-Normal.otf")}
+    </style>
+    <script>
+        resize();
+        window.onresize = function () {
+            resize();
+        };
+        function resize() {
+            if(document.documentElement.clientWidth>=1080){
+                document.documentElement.style.fontSize="100px";
+            }else {
+                document.documentElement.style.fontSize=document.documentElement.clientWidth/10.8+"px";
+            }
+        }
+    </script>
+</head>
+<body>
+<button onclick="go(0)">1</button>
+<button onclick="go(1)">2</button>
+<button onclick="go(2)">3</button>
+<button onclick="go(3)">4</button>
+<button onclick="go(4)">5</button>
+<button id="btn1" style="background: white; margin: 5px">内容</button>
+</body>
+<script>
+    function go (index) {
+        var list = [
+            [4, 586829, 'Aa小狐狸加粗', '2d95fcb1e41f47408b17fe8a39509e5a'],
+            [4, 564972, 'Aa-桃子小姐', '4c67bc8f701d4f9284d367a751eab92a'],
+            [4, 564973, 'Aa-西瓜先生', 'f70ed18e01d54d1b8dee08849cb88b52'],
+            [4, 586254, 'Aa芒小果', '9ff5c74d2d42451698b6f918cc1a8a76'],
+            [4, 586229, 'Aa小星星', 'b0e2d720697f40539e487d61950c6334'],
+        ]
+        window.ThemeClient.openProduct(list[index][0], list[index][1], list[index][2], list[index][3]);
+        var productInfoList = [{'type': 4, 'pkgName':list[index][3]}];
+        var ret = window.ThemeClient.isProductDownloaded(JSON.stringify(productInfoList));
+        document.getElementById('btn1').innerHTML = JSON.stringify(ret);
+        if (ret[0]['status']) {
+            document.getElementById('btn1').style.background = 'red';
+        } else {
+            document.getElementById('btn1').style.background = 'blue';
+        }
+    }
+</script>
+</html>

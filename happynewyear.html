@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>字体拜年祭</title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 100%;
+            font-size: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            border: 0px;
+        }
+
+        a:focus {
+            border: 0px;
+        }
+
+        a:active {
+            border: 0px;
+        }
+    </style>
+     <!--Global site tag (gtag.js) - Google Analytics-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110071893-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110071893-3');
+    </script>
+
+</head>
+<body>
+<div class="content">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/01.jpg">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/02.jpg">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/03.jpg">
+    <a href="javascript:openPage(0)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/04.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/05.jpg">
+    <a href="javascript:openPage(1)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/06.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/07.jpg">
+    <a href="javascript:openPage(2)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/08.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/09.jpg">
+    <a href="javascript:openPage(3)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/10.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/11.jpg">
+    <a href="javascript:openPage(4)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/12.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/13.jpg">
+    <a href="javascript:openPage(5)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/14.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/15.jpg">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/happynewyear/16.jpg">
+</div>
+<script type="text/javascript">
+    function openWallpaperInClient(fontArray) {
+        if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.openProduct != "undefined"
+                && window.ThemeClient.openProduct instanceof Function) {
+            window.ThemeClient.openProduct(fontArray[0], fontArray[1], fontArray[2], fontArray[3]);
+            return;
+        }
+        else if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.updateVersion != "undefined"
+                && window.ThemeClient.updateVersion instanceof Function) {
+            window.ThemeClient.updateVersion();
+            return;
+        }
+        else {
+            alert("当前客户端不支持该功能，请升级客户端");
+        }
+    }
+
+    function openPage(type) {
+        console.log(type);
+        var fontArray = [
+            [4,604509,'Aa贺岁来福','ac13ebf202bf42a18d312647cf59ec23'],
+            [4,600909,'Aa告白气球','1ff5484aa6ed43238b41666416a5296a'],
+            [4,604511,'Aa贺岁旺财','a9b6b8d792514816895f824fada8fb1b'],
+            [4,603096,'Aa白起男神','62dec73086d848d78d69cce4bc022643'],
+            [4,603100,'Aa风控警察','3639feacdff249718d7ea6df2c661a4e'],
+            [4,604501,'Aa大吉大利','436368dd19b249b3bc1e109cbf218fc8']
+        ];
+        gtag('event', 'click', {'event_category': fontArray[type][2]});
+        openWallpaperInClient(fontArray[type]);
+    }
+</script>
+</body>
+</html>

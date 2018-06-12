@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>寻寻幂幂,不离不弃</title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 100%;
+            font-size: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            border: 0px;
+        }
+
+        a:focus {
+            border: 0px;
+        }
+
+        a:active {
+            border: 0px;
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110071893-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110071893-4');
+    </script>
+
+
+</head>
+<body>
+<div class="content">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/yangmiti/01.jpg">
+    <a href="javascript:openPage()" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/yangmiti/02.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/yangmiti/03.jpg">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/yangmiti/04.jpg">
+    <a href="javascript:openPage()" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/yangmiti/05.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/yangmiti/06.jpg">
+</div>
+<script type="text/javascript">
+    function openWallpaperInClient(fontArray) {
+//        console.log(fontArray);
+        if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.openProduct != "undefined"
+                && window.ThemeClient.openProduct instanceof Function) {
+            window.ThemeClient.openProduct(fontArray[0], fontArray[1], fontArray[2], fontArray[3]);
+            return;
+        }
+        else if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.updateVersion != "undefined"
+                && window.ThemeClient.updateVersion instanceof Function) {
+            window.ThemeClient.updateVersion();
+            return;
+        }
+        else {
+            alert("当前客户端不支持该功能，请升级客户端");
+        }
+    }
+
+    function openPage() {
+        var fontArray = [4,1007020,'Aa杨幂手写体','784f53bdc683434984e576d8826c0bdc'];
+        gtag('event', 'click', {'event_category': fontArray[2]});
+        openWallpaperInClient(fontArray);
+    }
+</script>
+</body>
+</html>

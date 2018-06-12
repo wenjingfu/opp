@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>教师节活动</title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 100%;
+            font-size: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            border: 0px;
+        }
+
+        a:focus {
+            border: 0px;
+        }
+
+        a:active {
+            border: 0px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <img src="./assets/img/jiaoshijieoppo/01.jpg">
+    <img src="./assets/img/jiaoshijieoppo/02.jpg">
+    <img src="./assets/img/jiaoshijieoppo/03.jpg">
+    <a href="javascript:openPage(0)" onfocus="this.blur();"><img src="./assets/img/jiaoshijieoppo/04.jpg"></a>
+    <img src="./assets/img/jiaoshijieoppo/05.jpg">
+    <a href="javascript:openPage(1)" onfocus="this.blur();"><img src="./assets/img/jiaoshijieoppo/06.jpg"></a>
+    <img src="./assets/img/jiaoshijieoppo/07.jpg">
+    <a href="javascript:openPage(2)" onfocus="this.blur();"><img src="./assets/img/jiaoshijieoppo/08.jpg"></a>
+    <img src="./assets/img/jiaoshijieoppo/09.jpg">
+    <a href="javascript:openPage(3)" onfocus="this.blur();"><img src="./assets/img/jiaoshijieoppo/10.jpg"></a>
+    <img src="./assets/img/jiaoshijieoppo/11.jpg">
+    <a href="javascript:openPage(4)" onfocus="this.blur();"><img src="./assets/img/jiaoshijieoppo/12.jpg"></a>
+    <img src="./assets/img/jiaoshijieoppo/13.jpg">
+    <a href="javascript:openPage(5)" onfocus="this.blur();"><img src="./assets/img/jiaoshijieoppo/14.jpg"></a>
+    <img src="./assets/img/jiaoshijieoppo/15.jpg">
+    <img src="./assets/img/jiaoshijieoppo/16.jpg">
+</div>
+<script type="text/javascript">
+    function openWallpaperInClient(fontArray) {
+        if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.openProduct != "undefined"
+                && window.ThemeClient.openProduct instanceof Function) {
+            window.ThemeClient.openProduct(fontArray[0], fontArray[1], fontArray[2], fontArray[3]);
+            return;
+        }
+        else if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.updateVersion != "undefined"
+                && window.ThemeClient.updateVersion instanceof Function) {
+            window.ThemeClient.updateVersion();
+            return;
+        }
+        else {
+            alert("当前客户端不支持该功能，请升级客户端");
+        }
+    }
+
+    function openPage(type) {
+        var fontArray = [
+            [4, 589298, 'Aa语文老师的字', '7652124a3f414396b379f8d3fdd904d3'],
+            [4, 582307, 'Aa小轶手札', '1401a174c86b48dd81df912d3ccf46e1'],
+            [4, 589299, 'Aa芝士的力量', '37205219eb064d75a13a5d53d4dbc965'],
+            [4, 583064, 'Aa橡皮皇后', '75686a2e2d72482688873dd874277841'],
+            [4, 588383, 'Aa好好学习', '8e206c7819444956856a922605a6f238'],
+            [4, 589133, 'Aa云游四海', '9a13ea02c47648b08d826beff6d4baa1']
+        ];
+        openWallpaperInClient(fontArray[type]);
+    }
+</script>
+</body>
+</html>

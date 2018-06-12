@@ -1,104 +1,113 @@
 function Activity() {
-    this.raffleNum = 0; //抽奖次数
-    this.prize = false; //是否中奖
-    this.prizes = {};
-    this.registered = false;
-    this.userId = '';
+    this.raffleNum = 0; // 抽奖次数
+    this.prize = false; // 是否中奖
+    this.prizes = {}; // 奖品
+    this.registered = false; //中奖后是否填写地址
+    this.userId = ''; // 用户id
+    this.interval;
+    this.fontList = [
+        [4, 583727, 'Aa谦谦君子', 'a8b63e98a21a4f45b5047b5111331d13'],
+        [4, 586827, 'Aa窈窕淑女', '4c70772f1fa144a5a9d6a47a769eaf64'],
+        [4, 530628, '胖小儿体', 'com.monotype.android.font.PXEOPPO01'],
+        [4, 526700, '胖丫儿体', 'com.monotype.android.font.A254'],
+        [4, 586256, 'Aa三行情书体加粗', '2213c3af40c8429ab26b754e4780b047'],
+        [4, 586829, 'Aa小狐狸加粗', '2d95fcb1e41f47408b17fe8a39509e5a'],
+        [4, 564972, 'Aa-桃子小姐', '4c67bc8f701d4f9284d367a751eab92a'],
+        [4, 564973, 'Aa-西瓜先生', 'f70ed18e01d54d1b8dee08849cb88b52'],
+        [4, 586254, 'Aa芒小果', '9ff5c74d2d42451698b6f918cc1a8a76'],
+        [4, 586229, 'Aa小星星', 'b0e2d720697f40539e487d61950c6334'],
+        [4, 583064, 'Aa橡皮皇后', '75686a2e2d72482688873dd874277841'],
+        [4, 582304, 'Aa蝉梦', '8f505ed069d8445c9cb86a4d37acaa10'],
+        [4, 555667, 'Aa-花瓣体', 'com.monotype.android.font.AAHBT'],
+        [4, 561137, 'Aa-小鹿体', 'eb2fc1eea6384bdf9377d94e1dbfe778'],
+        [4, 582306, 'Aa桑尼', '2c9d37fe973f486cb6afc545ff5fd4d5'],
+        [4, 584209, 'Aa晴天', '1b04b6940f5e451f876673cfc4cd006e']
+    ]; // 字体参数
+    this.canGetUser = false; // 能否获取用户名
+    this.canOpenProduct = false; // 能否跳转到字体
+    this.canGetProductDownloadSituation = false; // 能否获取字体下载情况
+    this.canUpdateVersion = false; // 能否升级版本
+    this.version = 0; // 版本号
 }
 Activity.prototype = {
     constructor: Activity,
     init: function () {
-        this.getFontParams();
+        this.getAPISupportInfo();
+        this.getFontsInfo();
         this.updateWinnerList();
     },
-    //获取用户名和各个字体参数
-    getFontParams: function () {
-        //调用opp接口
-        var self = this;
-        var id;
-        var fontState = [];
-        var productInfoList = [
-            {"type": 4, "pkgName": 'a8b63e98a21a4f45b5047b5111331d13'},
-            {"type": 4, "pkgName": '4c70772f1fa144a5a9d6a47a769eaf64'},
-            {"type": 4, "pkgName": 'com.monotype.android.font.PXEOPPO01'},
-            {"type": 4, "pkgName": 'com.monotype.android.font.A254'},
-            {"type": 4, "pkgName": '2213c3af40c8429ab26b754e4780b047'},
-            {"type": 4, "pkgName": '2d95fcb1e41f47408b17fe8a39509e5a'},
-            {"type": 4, "pkgName": '4c67bc8f701d4f9284d367a751eab92a'},
-            {"type": 4, "pkgName": 'f70ed18e01d54d1b8dee08849cb88b52'},
-            {"type": 4, "pkgName": '9ff5c74d2d42451698b6f918cc1a8a76'},
-            {"type": 4, "pkgName": 'b0e2d720697f40539e487d61950c6334'},
-            {"type": 4, "pkgName": '75686a2e2d72482688873dd874277841'},
-            {"type": 4, "pkgName": '8f505ed069d8445c9cb86a4d37acaa10'},
-            {"type": 4, "pkgName": 'com.monotype.android.font.AAHBT'},
-            {"type": 4, "pkgName": 'eb2fc1eea6384bdf9377d94e1dbfe778'},
-            {"type": 4, "pkgName": '2c9d37fe973f486cb6afc545ff5fd4d5'},
-            {"type": 4, "pkgName": '1b04b6940f5e451f876673cfc4cd006e'}
-        ];
-
+    // 获取对几个API的支持情况
+    getAPISupportInfo: function () {
         if (typeof window.ThemeClient != "undefined"
             && typeof window.ThemeClient.getUserName != "undefined"
             && window.ThemeClient.getUserName instanceof Function) {
+            this.canGetUser = true;
+        }
+        if (typeof window.ThemeClient != "undefined"
+            && typeof window.ThemeClient.openProduct != "undefined"
+            && window.ThemeClient.openProduct instanceof Function) {
+            this.canOpenProduct = true;
+        }
+        if (typeof window.ThemeClient != "undefined"
+            && typeof window.ThemeClient.updateVersion != "undefined"
+            && window.ThemeClient.updateVersion instanceof Function) {
+            this.canUpdateVersion = true;
+        }
+        if ( typeof window.ThemeClient  != "undefined"
+            &&  window.ThemeClient.getVersion != "undefined"
+            && window.ThemeClient.getVersion instanceof Function){
+            this.version = window.ThemeClient.getVersion();
+        }
+        if ( typeof window.ThemeClient  != "undefined"
+            &&  window.ThemeClient.isProductDownloaded != "undefined"
+            && window.ThemeClient.isProductDownloaded instanceof Function) {
+            if ( this.version >= 480) {
+                this.canGetProductDownloadSituation = true;
+            }
+        }
+    },
+    // 获取用户名,获取用户字体的下载情况
+    getFontsInfo: function () {
+        var self = this;
+        var id;
+        var fontLen = self.fontList.length;
+        var fontStateList = [];
+        var productInfoList = [];
+        if (self.canGetUser) {
             id = window.ThemeClient.getUserName();
-            self.userId = id;
             if (id) {
-                if (typeof window.ThemeClient != "undefined"
-                    && typeof window.ThemeClient.isProductDownloaded != "undefined"
-                    && window.ThemeClient.isProductDownloaded instanceof Function) {
-                    fontState = window.ThemeClient.isProductDownloaded(JSON.stringify(productInfoList));
-                    var font = [];
-                    for (var i = 0; i < fontState.length; i++) {
-                        if (fontState[i].pkgName) {
-                            var fontId = fontState[i].pkgName;
-                            var status = fontState[i].status;
-                            font.push(
-                                {
-                                    "fontId": fontId,
-                                    "isPurchased": status ? true : false
-                                }
-                            )
-                        }
+                self.userId = id;
+                if (self.canGetProductDownloadSituation) {
+                    for (var i = 0; i < fontLen; i ++ ) {
+                        var fontId = self.fontList[i][3];
+                        var fontType = self.fontList[i][0];
+                        productInfoList.push({
+                            "type": fontType,
+                            "pkgName": fontId
+                        })
                     }
-                    if (font.length > 0) {
-                        var param = {
-                            "userId": id,
-                            "font": font
-                        };
-                        self.getUserDetailData(param);
+                    var ret = JSON.parse(window.ThemeClient.isProductDownloaded(JSON.stringify(productInfoList)));
+                    for (var m = 0; m < fontLen; m++) {
+                        fontStateList.push({
+                            "fontId": self.fontList[m][3],
+                            "isPurchased": ret[m]['status'] ? true : false
+                        })
                     }
+                    var param = {
+                        "userId": id,
+                        "font": fontStateList
+                    }
+                    self.getUserDetailData(param);
                 } else {
-                    self.alertLayer("当前客户端不支持该功能，请升级客户端");
+                    self.alertLayer("当前客户端不支持window.downloader功能，请升级客户端");
                 }
+
             } else {
-                self.alertLayer("请先登录")
+                self.alertLayer("请先登录");
             }
         } else {
             self.alertLayer("当前客户端不支持该功能，请升级客户端");
         }
-
-        //self.userId = 'test32';
-        //var font = {
-        //    "userId": self.userId,
-        //    "font": [
-        //        {"fontId": "a8b63e98a21a4f45b5047b5111331d13", "isPurchased": false},
-        //        {"fontId": "4c70772f1fa144a5a9d6a47a769eaf64", "isPurchased": true},
-        //        {"fontId": "com.monotype.android.font.PXEOPPO01", "isPurchased": true},
-        //        {"fontId": "com.monotype.android.font.A254", "isPurchased": false},
-        //        {"fontId": "2213c3af40c8429ab26b754e4780b047", "isPurchased": false},
-        //        {"fontId": "2d95fcb1e41f47408b17fe8a39509e5a", "isPurchased": false},
-        //        {"fontId": "4c67bc8f701d4f9284d367a751eab92a", "isPurchased": false},
-        //        {"fontId": "f70ed18e01d54d1b8dee08849cb88b52", "isPurchased": false},
-        //        {"fontId": "9ff5c74d2d42451698b6f918cc1a8a76", "isPurchased": true},
-        //        {"fontId": "b0e2d720697f40539e487d61950c6334", "isPurchased": false},
-        //        {"fontId": "75686a2e2d72482688873dd874277841", "isPurchased": false},
-        //        {"fontId": "8f505ed069d8445c9cb86a4d37acaa10", "isPurchased": false},
-        //        {"fontId": "com.monotype.android.font.AAHBT", "isPurchased": false},
-        //        {"fontId": "eb2fc1eea6384bdf9377d94e1dbfe778", "isPurchased": false},
-        //        {"fontId": "2c9d37fe973f486cb6afc545ff5fd4d5", "isPurchased": true},
-        //        {"fontId": "1b04b6940f5e451f876673cfc4cd006e", "isPurchased": true}
-        //    ]
-        //};
-        //self.getUserDetailData(font);
     },
     /*
      * @param {object} data 用户id 和字体参数
@@ -113,8 +122,8 @@ Activity.prototype = {
             data: JSON.stringify(data),
             dataType: 'json',
             success: function (res) {
-                console.log(res);
-                if (res.errorCode == 0) {
+                alert(res);
+                if (res.errorCode === 0) {
                     var data = res.data;
                     self.raffleNum = data.raffleNum;
                     self.prize = data.prize;
@@ -163,62 +172,35 @@ Activity.prototype = {
         });
     },
     //下载字体
-    openPage: function (type) {
+    openPage: function (index) {
         var self = this;
-        var fontList = [
-            [4, 583727, 'Aa谦谦君子', 'a8b63e98a21a4f45b5047b5111331d13'],
-            [4, 586827, 'Aa窈窕淑女', '4c70772f1fa144a5a9d6a47a769eaf64'],
-            [4, 530628, '胖小儿体', 'com.monotype.android.font.PXEOPPO01'],
-            [4, 526700, '胖丫儿体', 'com.monotype.android.font.A254'],
-            [4, 586256, 'Aa三行情书体加粗', '2213c3af40c8429ab26b754e4780b047'],
-            [4, 586829, 'Aa小狐狸加粗', '2d95fcb1e41f47408b17fe8a39509e5a'],
-            [4, 564972, 'Aa-桃子小姐', '4c67bc8f701d4f9284d367a751eab92a'],
-            [4, 564973, 'Aa-西瓜先生', 'f70ed18e01d54d1b8dee08849cb88b52'],
-            [4, 586254, 'Aa芒小果', '9ff5c74d2d42451698b6f918cc1a8a76'],
-            [4, 586229, 'Aa小星星', 'b0e2d720697f40539e487d61950c6334'],
-            [4, 583064, 'Aa橡皮皇后', '75686a2e2d72482688873dd874277841'],
-            [4, 582304, 'Aa蝉梦', '8f505ed069d8445c9cb86a4d37acaa10'],
-            [4, 555667, 'Aa-花瓣体', 'com.monotype.android.font.AAHBT'],
-            [4, 561137, 'Aa-小鹿体', 'eb2fc1eea6384bdf9377d94e1dbfe778'],
-            [4, 582306, 'Aa桑尼', '2c9d37fe973f486cb6afc545ff5fd4d5'],
-            [4, 584209, 'Aa晴天', '1b04b6940f5e451f876673cfc4cd006e']
-        ];
-        //if (self.userId) {
-        //    self.openWallpaperInClient(fontList[type]);
-        //} else {
-        //    self.alertLayer("请先登录!");
-        //}
-        self.openWallpaperInClient(fontList[type]);
-    },
-    openWallpaperInClient: function (fontParams) {
-        var self = this;
-        var productInfoList = [{type: fontParams[0], pkgName: fontParams[3]}];
-        var fontState;
-        if (typeof window.ThemeClient != "undefined"
-            && typeof window.ThemeClient.openProduct != "undefined"
-            && window.ThemeClient.openProduct instanceof Function) {
-            window.ThemeClient.openProduct(fontParams[0], fontParams[1], fontParams[2], fontParams[3]);
-            if (typeof window.ThemeClient != "undefined"
-                && typeof window.ThemeClient.isProductDownloaded != "undefined"
-                && window.ThemeClient.isProductDownloaded instanceof Function) {
-                fontState = window.ThemeClient.isProductDownloaded(JSON.stringify(productInfoList));
-                if (fontState[0].status) {
-                    self.addRaffleNum(fontState[0].pkgName);
-                }
+        if (self.interval) {
+            clearInterval(self.interval);
+        }
+        if (self.userId) {
+            var clickedFont = self.fontList[index];
+            var productInfoList = [{"type": clickedFont[0], "pkgName": clickedFont[3]}];
+            if (self.canOpenProduct) {
+                window.ThemeClient.openProduct(clickedFont[0], clickedFont[1], clickedFont[2], clickedFont[3]);
+                //self.interval = setInterval(function(){
+                //    var fontState = window.ThemeClient.isProductDownloaded(JSON.stringify(productInfoList));
+                //    if (JSON.parse(fontState)[0]['status']) {
+                //        $("#raffleNum").html('成功下载');
+                //        //self.addRaffleNum(clickedFont[3]);
+                //        clearInterval(self.interval);
+                //    } else {
+                //        $("#raffleNum").html('未下载');
+                //    }
+                //},1000);
+            } else if (self.canUpdateVersion) {
+                window.ThemeClient.updateVersion();
+                return;
             } else {
                 self.alertLayer("当前客户端不支持该功能，请升级客户端");
             }
-            return;
-        } else if (typeof window.ThemeClient != "undefined"
-            && typeof window.ThemeClient.updateVersion != "undefined"
-            && window.ThemeClient.updateVersion instanceof Function) {
-            window.ThemeClient.updateVersion();
-            return;
+        } else {
+            self.alertLayer("请先登录!");
         }
-        else {
-            self.alertLayer("当前客户端不支持该功能，请升级客户端");
-        }
-        //self.addRaffleNum(fontParams[3]);
     },
     //增加抽奖次数
     addRaffleNum: function (fontId) {
@@ -234,6 +216,7 @@ Activity.prototype = {
             data: JSON.stringify(data),
             dataType: 'json',
             success: function (res) {
+                alert(res);
                 if (res.errorCode == 0) {
                     self.raffleNum = res.data.raffleNum;
                     self.updateRaffleNum();
@@ -459,4 +442,30 @@ Activity.prototype = {
 $('img.lazy').lazyload();
 var activity = new Activity();
 activity.init();
+var ThemeH5 = {
+    'updateDownloadProgress':function(pkgName, progress){
+        var h6=document.createElement("h6");
+        h6.innerHTML = pkgName + "成功更新" + progress;
+        document.body.appendChild(h6);
+    },
+
+    'downloadSuccess':function(type, masterid){
+        activity.addRaffleNum('com.monotype.android.font.AAHBT');
+        //var h6=document.createElement("h6");
+        //h6.innerHTML = masterid + "成功下载" + type;
+        //document.body.appendChild(h6);
+    },
+
+    'buyProductSuccess':function(type, masterid){
+        $("#raffleNum").html(masterid);
+        //var h6=document.createElement("h6");
+        //h6.innerHTML = masterid + "成功购买" + type;
+        //document.body.appendChild(h6);
+    },
+
+    'awardServiceDone':function(activityId,operationType,requestData, status,responseData){
+        var result = "activityId=" + activityId + ",operationType=" + operationType + ",requestData=" + requestData + ",status=" + status + "\n·þÎñÆ÷·µ»Ø=" + responseData;
+        alert(result);
+    }
+}
 

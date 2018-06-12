@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>五一劳动节</title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 100%;
+            font-size: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            border: 0px;
+        }
+
+        a:focus {
+            border: 0px;
+        }
+
+        a:active {
+            border: 0px;
+        }
+        .font-img img {
+            width: 50%;
+            /*height: 4.3rem;*/
+            float: left;
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110071893-5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110071893-5');
+    </script>
+
+
+</head>
+<body>
+<div class="content">
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/May1/01.jpg">
+    <a href="javascript:openPage(0)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/May1/02.jpg"></a>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/May1/03.jpg">
+    <div class="font-img">
+        <a href="javascript:openPage(1)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/May1/04.jpg"></a>
+        <a href="javascript:openPage(2)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/May1/05.jpg"></a>
+    </div>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/May1/06.jpg">
+    <div class="font-img">
+        <a href="javascript:openPage(3)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/May1/07.jpg"></a>
+        <a href="javascript:openPage(4)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/May1/08.jpg"></a>
+    </div>
+    <img src="http://upaicdn.xinmei365.com/activity/oppo/img/May1/09.jpg">
+    <a href="javascript:openPage(5)" onfocus="this.blur();"><img src="http://upaicdn.xinmei365.com/activity/oppo/img/May1/10.jpg"></a>
+
+</div>
+<script type="text/javascript">
+    function openWallpaperInClient(fontArray) {
+        console.log(fontArray);
+        if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.openProduct != "undefined"
+                && window.ThemeClient.openProduct instanceof Function) {
+            window.ThemeClient.openProduct(fontArray[0], fontArray[1], fontArray[2], fontArray[3]);
+            return;
+        }
+        else if (typeof window.ThemeClient != "undefined"
+                && typeof window.ThemeClient.updateVersion != "undefined"
+                && window.ThemeClient.updateVersion instanceof Function) {
+            window.ThemeClient.updateVersion();
+            return;
+        }
+        else {
+            alert("当前客户端不支持该功能，请升级客户端");
+        }
+    }
+
+    function openPage(type) {
+        var fontArray = [
+            [4, 543235,'Aa-青葱体','com.monotype.android.font.QC'],
+            [4, 587089,'Aa美涵体','f5d3299c21434c09a9de32130d524035'],
+            [4, 544089,'Aa-夕禾体简','com.monotype.android.font.XHT'],
+            [4, 588383,'Aa好好学习','8e206c7819444956856a922605a6f238'],
+            [4, 594599,'Aa可乐','9063df8363d34806bd2d3f2e210cea17'],
+            [4, 1003109,'Aa梦醒见你','691f4767e12a4597bb4fd46ab3ea27ba']
+        ];
+        gtag('event', 'click', {'event_category': fontArray[2]});
+        openWallpaperInClient(fontArray[type]);
+    }
+</script>
+</body>
+</html>
